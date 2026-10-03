@@ -1,0 +1,71 @@
+{
+  "folders": [
+    {
+      "path": "backend"
+    },
+    {
+      "path": "my-app"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/.pytest_cache": true,
+      "**/.venv": true,
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/*.sqlite3": true
+    }
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Run Django backend",
+        "type": "shell",
+        "command": "python",
+        "args": [
+          "manage.py",
+          "runserver"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:backend}"
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Install frontend dependencies",
+        "type": "shell",
+        "command": "npm",
+        "args": [
+          "install"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:my-app}"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Run frontend dev server",
+        "type": "shell",
+        "command": "npm",
+        "args": [
+          "run",
+          "dev"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder:my-app}"
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated"
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+}
