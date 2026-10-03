@@ -1,0 +1,21 @@
+# Environment variables
+backend/.venv
+.env.*
+
+# SQLite database
+*.sqlite3
+*.db
+
+# Python
+core/__pycache__
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Django
+*.log
+media/
+staticfiles/
